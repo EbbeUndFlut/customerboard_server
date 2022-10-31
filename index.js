@@ -7,7 +7,7 @@ import { encrypt } from './middleware/encryptMiddleware.js'
 import { verifyBearer } from './controller/authController.js'
 import { kontostand } from './controller/kontoController.js'
 import { checkToken } from './middleware/verifyMiddleware.js'
-import { addCustomer, getCustomer, getAllCustomer } from './controller/customerController.js'
+import { addCustomer, getCustomer, getAllCustomer, createCustomerLogin, removeCustomer } from './controller/customerController.js'
 
 
 // Falls ihr multer oder den express validator nutzt, importiert diese einfach auch
@@ -28,6 +28,8 @@ app.get('/api/konto', checkToken, kontostand)
 app.post('/api/customer', checkToken, addCustomer)
 app.get('/api/customer', checkToken, getAllCustomer)
 app.get('/api/customer/:id', checkToken, getCustomer)
+app.delete('/api/customer', checkToken, removeCustomer)
+app.put('/api/customer/login', checkToken, createCustomerLogin)
 
 
 // dann werfen wir den Server mal an
