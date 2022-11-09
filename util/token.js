@@ -14,3 +14,12 @@ export const verifyToken = (token) => {
 
 
 }
+
+export const verifyTokens = (token) => {
+
+
+    const result = jwt.verify(token, process.env.JWT_SECRET)
+    return result
+
+
+}

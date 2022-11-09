@@ -32,5 +32,57 @@ app.delete('/api/customer', checkToken, removeCustomer)
 app.put('/api/customer/login', checkToken, createCustomerLogin)
 
 
+const daten = [
+    {
+        name: 'dgdsFG',
+        autos: [{
+            name: 'dsdfsgdfs'
+        },
+        {
+            name: 'hfgdh'
+        }]
+    },
+    {
+        name: 'dgdsFG',
+        autos: [{
+            name: 'dsdfsgdfs'
+        },
+        {
+            name: 'hfgdh'
+        }]
+    },
+    {
+        name: 'dgdsFG',
+        autos: [{
+            name: 'dsdfsgdfs'
+        },
+        {
+            name: 'hfgdh'
+        }]
+    },
+    {
+        name: 'dgdsFG',
+        autos: [{
+            name: 'dsdfsgdfs'
+        },
+        {
+            name: 'hfgdh'
+        }]
+    },
+    {
+        name: 'dgdsFG',
+        autos: [{
+            name: 'dsdfsgdfs'
+        },
+        {
+            name: 'hfgdh'
+        }]
+    }
+]
+app.get('/daten', (_, res) => {
+    res.status(200).json(daten)
+})
+
+
 // dann werfen wir den Server mal an
 app.listen(PORT, () => console.log('Server runs on Port:', PORT))
